@@ -1,12 +1,37 @@
+@media (prefers-color-scheme: light) {
+ 
+    :root {
+    --cor-primaria: #e21;
+    --cor-primaria-escura: #900;
+    --fundo-1: #f7f7f7;
+    --fundo-2: white;
+    --texto: #000000;
+    --cor-subtitulo: rgba(0.0.0.0,2);
+    --onda: url(./img/onda-clara.svg);
+}
+}
+@media (prefers-color-scheme: dark) {
+    :root{ 
+    --cor-primaria: #e21;
+    --cor-primaria-escura: #900;        
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --cor-subtitulo: rgba(225.225.225.0,2);
+    --onda: url(./img/onda-escura.svg);
+
+ }
+}
+
 body {
     display: grid;
     justify-items: center;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background: rgb(245, 245, 245) ;
+    background: var(--fundo-1);
     gap: 60px;
     margin-top: 60px;
-
+    color: var(--texto);
 }
 
 .header {
@@ -19,10 +44,10 @@ body {
 .header li {
     display: inline-block;
     padding: 1rem 2rem;
-    background: white;
+    background: var(--fundo-2);
     margin: 5px;
     border-radius: 4px;
-    border: 1px solid white;
+    border: 1px solid var(--fundo-2);
     }
 
 .introducao {
@@ -43,7 +68,7 @@ body {
     align-content: center;
     gap: 20px;
     justify-items: end;
-    background: white;
+    background: var(--fundo-2);
     padding: 40px;
     text-align: right;
     position: relative;
@@ -57,7 +82,7 @@ h1::after {
     display: inline-block;
     width: 50px;
     height: 5px;
-    background: red;
+    background: var(--cor-primaria);
     position: absolute;
     right: -25px;
     top: 20px;
@@ -65,19 +90,19 @@ h1::after {
 
 .botao {
     padding: 15px 30px;
-    background-color: red;
+    background-color: var(--cor-primaria);
     color: white;
     text-decoration: none;
     border-radius: 4px;
 }
 
 .botao:hover {
-    background: #900;
+    background: var(--cor-primaria-escura);
     cursor: pointer;
 }
 
 header li:hover {
-    border: 1px solid #900;
+    border: 1px solid var(--cor-primaria-escura);
 }
 
 .bike {
@@ -95,31 +120,28 @@ header li:hover {
 
 .onda {
     font-size: 4rem;
-    color: rgba(0,0,0,0.5);
+    color: var(--cor-subtitulo);
     text-align: right;
     padding: 40px;
     align-self: center;
-    background-image: url(./img/onda.svg);
-
-
-    
+    background-image: var(--onda);  
 }
 
 .vantagens {
     padding: 40px;
-    background: white;
+    background: var(--fundo-2);
 }
 
 .vantagens-item:nth-child(odd) {
-    background: rgb(245, 245, 245) ;
+    background: var(--fundo-1);
 }
 
 .vantagens-item:hover{
-    border-left: 4px solid #900;
+    border-left: 4px solid var(--cor-primaria-escura);
 }
 
 .vantagens {
-    background: white;
+    background: var(--fundo-2);
 }
 .vantagens-item {
     display: grid;
@@ -133,7 +155,7 @@ header li:hover {
 }
 
 footer {
-    background: white;
+    background: var(--fundo-2);
     width: 100%;
     text-align: center;
     padding: 40px;
